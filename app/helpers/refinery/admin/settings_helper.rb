@@ -20,8 +20,7 @@ module ::Refinery
                #{f.label :value, help.presence || t('enabled', :scope => 'refinery.admin.settings.form'),
                          :class => 'stripped'}"
         else
-          f.text_area :value, :value => @setting.form_value,
-                      :class => 'widest', :rows => 5
+          f.text_field :value, :value => @setting.form_value, :class => 'larger widest'
         end
       end
     end

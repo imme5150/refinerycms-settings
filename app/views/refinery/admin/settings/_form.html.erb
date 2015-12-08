@@ -7,9 +7,7 @@
     <%= f.label :name %>
     <%= f.text_field :name, :class => "larger widest" %>
   <% else %>
-    <%= f.label :title %>
-		<%= f.text_field :title, :value => @setting.title, :class => "larger widest" %>
-		<span class="preview">(<%= @setting.name %>)</span>
+		<h3><%= @setting.title %></h3>
   <% end %>
   <% if current_refinery_user.has_role?(:superuser) && @setting.new_record? %>
     <div class='field'>
@@ -22,7 +20,7 @@
       <span><%= help %></span>
     </p>
   <% end %>
-  <% if current_refinery_user.has_role?(:superuser) %>
+  <% if false # current_refinery_user.has_role?(:superuser) %>
     <span class='label_with_help'>
       <%= f.label :restricted %>
       <%= refinery_help_tag t('restricted', :scope => 'refinery.admin.settings.form.help') %>
@@ -32,7 +30,6 @@
   <% end %>
   </div>
   <div class='field'>
-    <%= setting_title(f) %>
     <%= setting_field(f, help) %>
   </div>
 
